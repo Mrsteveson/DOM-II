@@ -127,6 +127,14 @@ window.addEventListener('blur', pause);
 window.addEventListener('focus', play);
 
 
+//Prevent Default!
+// Cancels out the refresh on the anchortags
+const noRefresh = document.querySelectorAll('a');
+for(i = 0; i < noRefresh.length; i++){
+    noRefresh[i].addEventListener('click', function(e){
+        e.preventDefault();
+    });
+}
 
 // Extra shizz------------------------------------------------------------->
 
