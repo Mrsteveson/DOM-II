@@ -63,15 +63,14 @@ document.addEventListener('drag', function(e){
 
 // ReSize Event Listener
 // Sets a border on container home
-const resized = document.querySelector('.home');
-
-document.addEventListener('resize', function(){
-    resized
+window.addEventListener('resize', function(){
+    console.log("Window was resized pal!");
 });
 
 
 // Scroll Event Listener
 // creates a div in the form of a red box, containing UpDown, as you scroll.
+// Clicking on Div will bump you back to the top.
 let scrollY = 0; 
 scrollY = window.scrollY;
     
@@ -100,18 +99,17 @@ window.addEventListener('scroll', function(e){
     }
 });
 
+div.addEventListener('click', function(){
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  })
 
 // Load Event Listener
 // Logs "Done Loading" when the lambdaschool about page finishes loading.
-// No idea how to gauge if this is working or not.
-const loading = document.createElement('script');
 
-loading.addEventListener('load', function(e){
+window.addEventListener('load', function(){
     console.log("Done loading");
 });
-
-loading.src = "https://lambdaschool.com/about/";
-loading.async = "true";
 
 
 // Focus Event Listener.
