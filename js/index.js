@@ -10,6 +10,24 @@ for(let i = 0; i < aTag.length; i++){
     });
 }
 
+//Event Pro 
+let navPro = document.querySelector('nav');
+
+navPro.addEventListener('click', function(){
+    alert("Navigation Clicked!!!");
+});
+
+
+const aTag2 = document.querySelectorAll('a');
+
+aTag2.forEach(function(item){
+    item.addEventListener('click', function(event){
+        alert("What are you doing to my Anchor Tags!")
+        event.stopPropagation();
+    });
+});
+
+
 
 // Click Event Listener
 // Changes any Ptag section's text to purple and bolds them.
